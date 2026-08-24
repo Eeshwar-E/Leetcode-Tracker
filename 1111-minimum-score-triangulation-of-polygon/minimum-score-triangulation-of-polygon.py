@@ -4,9 +4,8 @@ class Solution:
             return 0
         n = len(values)
         dp = [[float('inf')]*n for _ in range(n)]
-        for i in range(n):
-            if i + 1 < n:
-                dp[i][i+1] = 0
+        for i in range(n-1):
+            dp[i][i+1] = 0
         for length in range(2, n):
             for i in range(n - length):
                 j = i + length
